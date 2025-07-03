@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: oktaflix-v2
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    region: oregon
+    envVars:
+      - key: JELLYFIN_CONFIG_PATH
+        value: /config_new
+    healthCheckPath: /
+    ports:
+      - 8096
